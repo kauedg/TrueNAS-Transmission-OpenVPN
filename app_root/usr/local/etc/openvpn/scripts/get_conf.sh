@@ -8,4 +8,4 @@ SERVER=$(curl -s "$URL" | jq -r '.[] | select(.search_keywords | index("P2P")) |
 SERVER_FILE="https://downloads.nordcdn.com/configs/files/ovpn_udp/servers/${SERVER}.udp.ovpn"
 
 echo "Chosen: ${SERVER_FILE}"
-/usr/local/bin/wget -q "${SERVER_FILE}" -O "/usr/local/etc/openvpn/client.conf"
+/usr/local/bin/curl -s "${SERVER_FILE}" -o "/usr/local/etc/openvpn/client.conf"
