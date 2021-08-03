@@ -1,6 +1,8 @@
 ### Install instructions
 - On your TrueNAS server shell, enter the jail  
-`root@host $ iocage console [jailname]`
+```shell
+root@host $ iocage console [jailname]
+```
 
 - Download and extract this project's source  
 ```shell
