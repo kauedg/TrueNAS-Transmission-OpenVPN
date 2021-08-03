@@ -12,21 +12,22 @@ requirements:
 	pkg update
 	pkg fetch -u -y
 	pkg upgrade -y
-	pkg install -y openvpn python3 jq wget
+	pkg install -y openvpn python3 jq
 
 install:
-	service transmission status && service transmission stop
+	- service transmission status && service transmission stop
 
 	cp -R ./app_root/* /
 	chmod +x /usr/local/etc/rc.d/openvpn
 	chmod +x /usr/local/etc/openvpn/scripts/*.sh
+	chmod 600 /usr/local/etc/openvpn/client.conf
 
 	@clear
-	@echo "Enter your OpenVPN username and press [ENTER]:" ; \
+	@echo "Enter your VPN provider username and press [ENTER]:" ; \
 	read USERNAME ; \
 	echo $$USERNAME > /usr/local/etc/openvpn/credentials
 
-	@printf "Enter your OpenVPN password and press [ENTER]: \n"; \
+	@printf "Enter your VPN provider password and press [ENTER]: \n"; \
 	stty -echo; \
 	read PASSWORD; \
 	stty echo; \
@@ -35,7 +36,7 @@ install:
 	chmod 600 /usr/local/etc/openvpn/credentials
 
 	@clear
-	@echo -e "\nVPN service's username and password written to the '/usr/local/etc/openvpn/credentials' file."
+	@echo -e "\nVPN service's username and password were written to the '/usr/local/etc/openvpn/credentials' file."
 	@echo -e "PLEASE BE AWARE:  These are written out in plain text.\n\n"
 
 	@echo "Installation complete. The service will automatically select and connect to a NordVPN UDP P2P capable"
