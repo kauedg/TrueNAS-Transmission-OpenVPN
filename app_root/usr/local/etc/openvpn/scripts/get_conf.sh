@@ -1,4 +1,6 @@
 #!/usr/local/bin/bash
+set -e
+
 echo "Getting a random P2P NordVPN server"
 
 URL="https://api.nordvpn.com/server"

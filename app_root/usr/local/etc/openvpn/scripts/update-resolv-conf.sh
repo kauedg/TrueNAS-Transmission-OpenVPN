@@ -21,6 +21,8 @@
 ## PATH below. You might need to directly set the path to 'resolvconf'
 ## manually if it still doesn't work, i.e.
 ## RESOLVCONF=/usr/sbin/resolvconf
+set -e
+
 export PATH=$PATH:/sbin:/usr/sbin:/bin:/usr/bin
 RESOLVCONF=$(type -p resolvconf)
 
