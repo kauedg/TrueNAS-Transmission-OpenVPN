@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -e
+
 TRANSMISSION_HOME="/usr/local/etc/transmission/home"
 
 cd scripts
@@ -6,6 +8,9 @@ cd scripts
 echo "======== basename $0 "
 
 service transmission status && service transmission stop
+
+echo "Getting a new VPN server configuration file"
+. ./get_conf.sh
 
 echo "Disabling all current resolvconf interfaces configurations"
 rm -rf /var/run/resolvconf/interfaces/*
