@@ -12,7 +12,7 @@ requirements:
 	pkg update
 	pkg fetch -u -y
 	pkg upgrade -y
-	pkg install -y openvpn python3 jq
+	pkg install -y openvpn python3 jq wget
 
 install:
 	service transmission status && service transmission stop
