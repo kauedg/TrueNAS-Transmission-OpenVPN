@@ -2,6 +2,8 @@
 default: all
 
 uninstall:
+	- service transmission stop
+	- service openvpn stop 
 	rm -rf /usr/local/etc/openvpn
 	rm -rf /etc/rc.conf.d/openvpn
 	rm -rf /usr/local/etc/rc.d/openvpn
