@@ -58,7 +58,6 @@ up)
     R="${R}nameserver $NS
 "
   done
-  #echo -n "$R" | $RESOLVCONF -x -p -a "${dev}"
   echo -n "$R" | $RESOLVCONF -x -a "${dev}.inet"
   ;;
 down)
