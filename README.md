@@ -1,3 +1,6 @@
+### Supported VPNs
+Currently only NordVPN
+
 ### Install instructions
 - On your TrueNAS server shell, enter the jail  
 ```shell
