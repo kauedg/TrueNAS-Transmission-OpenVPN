@@ -3,9 +3,9 @@ set -e
 
 TRANSMISSION_HOME="/usr/local/etc/transmission/home"
 
-cd scripts
+echo "======== $(basename $0) "
 
-echo "======== basename $0 "
+cd scripts
 
 service transmission status && service transmission stop
 
