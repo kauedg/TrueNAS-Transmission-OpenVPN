@@ -1,6 +1,8 @@
 #!/usr/local/bin/bash
 set -e
 
+echo "======== $(basename $0) "
+
 echo "Getting a random P2P NordVPN server"
 
 URL="https://api.nordvpn.com/server"
@@ -9,3 +11,5 @@ SERVER_FILE="https://downloads.nordcdn.com/configs/files/ovpn_udp/servers/${SERV
 
 echo "Chosen: ${SERVER_FILE}"
 /usr/local/bin/curl -s "${SERVER_FILE}" -o "/usr/local/etc/openvpn/client.conf"
+
+echo "========================================="
