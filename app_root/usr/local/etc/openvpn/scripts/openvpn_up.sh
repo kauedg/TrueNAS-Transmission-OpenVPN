@@ -9,9 +9,6 @@ cd scripts
 
 service transmission status && service transmission stop
 
-echo "Getting a new VPN server configuration file"
-. ./get_conf.sh
-
 echo "Disabling all current resolvconf interfaces configurations"
 rm -rf /var/run/resolvconf/interfaces/*
 
