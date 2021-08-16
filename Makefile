@@ -3,7 +3,7 @@ default: all
 
 uninstall:
 	- service transmission stop
-	- service openvpn stop 
+	- service openvpn stop
 	rm -rf /usr/local/etc/openvpn
 	rm -rf /etc/rc.conf.d/openvpn
 	rm -rf /usr/local/etc/rc.d/openvpn
@@ -25,11 +25,12 @@ install:
 	chmod 600 /usr/local/etc/openvpn/client.conf
 
 	@clear
-	@echo "Enter your VPN provider username and press [ENTER]:" ; \
+	@echo "NordVPN service credential (not your email/password)"
+	@echo "Enter your NordVPN service credential username and press [ENTER]:" ; \
 	read USERNAME ; \
 	echo $$USERNAME > /usr/local/etc/openvpn/credentials
 
-	@printf "Enter your VPN provider password and press [ENTER]: \n"; \
+	@printf "Enter your NordVPN service credential password and press [ENTER]: \n"; \
 	stty -echo; \
 	read PASSWORD; \
 	stty echo; \

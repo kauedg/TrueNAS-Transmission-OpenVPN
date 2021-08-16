@@ -2,6 +2,9 @@
 Currently only NordVPN
 
 ### Install instructions
+- Create a jail based on the "Transmission" community plugin.
+  - During creation, open the "Advanced Plugin Installation" section and in the "Custom Properties" section select "allow_tun"
+
 - On your TrueNAS server shell, enter the jail  
 ```shell
 root@host $ iocage console [jailname]
@@ -10,7 +13,7 @@ root@host $ iocage console [jailname]
 - Download and extract this project's source  
 ```shell
 root@jail $ cd /tmp
-root@jail $ curl -L https://github.com/kauedg/TrueNAS-Transmission-OpenVPN/archive/refs/heads/master.zip | unzip -
+root@jail $ curl -L https://github.com/kauedg/TrueNAS-Transmission-OpenVPN/archive/refs/tags/1.0.3.zip | unzip -
 root@jail $ cd TrueNAS-Transmission-OpenVPN-master/
 ```
 
